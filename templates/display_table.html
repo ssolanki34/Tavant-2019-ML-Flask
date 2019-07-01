@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Table of Data</title>
+</head>
+	<body>
+		<h1>Rows 1 - 15 of data</h1>
+		<table>
+			<tr> 
+				<th>Id</th>
+				<th>SepalWidth (cm)</th>
+				<th>SepalLength (cm)</th>
+				<th>PetalWidth (cm)</th>
+				<th>PetalLength (cm)</th>
+				<th>Species</th>
+			</tr>
+
+			{% for row in data %}
+				<tr> 
+					{% for each_column in row %}
+						<td> {{each_column}} </td>
+					{% endfor %}
+				</tr>
+			{% endfor %}
+		</table>
+	</body>
+</html>

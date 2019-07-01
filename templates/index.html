@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>ML Model --> Flask API</title>
+</head>
+	<body>
+	  <div class="container">
+		<h1>Upload Data</h1>
+		<form method="POST" action="/create_database" enctype = "multipart/form-data">
+		<div class="form-group">
+			<label for="data_file">File Input</label>
+			<input type="file" name="data_file">
+		</div>
+		<button type="submit" class="btn btn-default">Submit</button> 
+		</form>
+	  </div>
+
+	  <div class= "model">
+	  	<h1>Predict Model</h1>
+	  	<form method="POST" action="/predict_model" enctype="multipart/form-data">
+	  	<div class="form-group">
+	  		<label for="model_file">Upload Model</label>
+	  		<input type="file" name="model_file">
+	  	</div>
+	  	<div class ="test-data">
+	  		<label for="testing_data">Upload Test Data</label>
+	  		<input type="file" name="testing_data">
+	  	</div>
+	  <button type="submit" class="btn btn-default">Submit</button>
+	  </form>
+	  </div>
+
+	</body>
+</html>
