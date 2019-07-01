@@ -11,6 +11,12 @@ To run code:
 
 - pip install -r requirements.txt 
 
+### Html vs User Version 
+
+The HTML version of the code has Flask interacting with an HTML page where the user can upload their files where necessary. 
+
+The User version of the code allows the user to specify file paths directly into the url.
+
 ### Code developed with
 
 - Python 3.7.7
