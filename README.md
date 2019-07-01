@@ -1,15 +1,15 @@
-#Deploying ML Model Using Flask API 
+# Deploying ML Model Using Flask API 
 Project completed for Tavant Technologies - Summer 2019 Internship. 
 
 This project provides a pipeline from a Machine Learning model and Postgres database to a Flask API. Those wanting to integrate a ML model in their project can do so with this project.
 
-###Instructions
+### Instructions
 
 To run code - install pip and virtualenv. 
 
 - pip install -r requirements.txt 
 
-###Code developed with
+### Code developed with
 
 - Python 3.7.7
 
@@ -18,7 +18,7 @@ To run code - install pip and virtualenv.
 - pip 19.1.1
 
 
-###Packages Used 
+### Packages Used 
 
 - flask
 
