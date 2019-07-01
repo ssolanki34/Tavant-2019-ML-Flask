@@ -15,7 +15,7 @@ class Database:
 	password = ""
 	host = ""
 	port = ""
-	tableName = ""
+	table_name = ""
 	connection = None 
 
 	def __init__(self): 
@@ -23,12 +23,12 @@ class Database:
 		self.__dataFile = ""
 
 	# Connect to database 
-	def connect(self, user, password, host, port, databaseName, tableName):
+	def connect(self, user, password, host, port, databaseName, table_name):
 		Database.user = str(user) 
 		Database.password = str(password)
 		Database.host = str(host)
 		Database.port = str(port)
-		Database.tableName = str(tableName).lower() 
+		Database.table_name = str(table_name).lower() 
 		self.__databaseName = str(databaseName)
 		
 		try:
@@ -72,7 +72,7 @@ class Database:
 				primaryKeyFlags.append(False)
 
 			try:
-				table = sql.Table(Database.tableName, metadata, 
+				table = sql.Table(Database.table_name, metadata, 
 									*(sql.Column(columnName, columnType, primary_key=primaryKeyFlag) 
 									for columnName, columnType, primaryKeyFlag in zip(columnNames, columnTypes, primaryKeyFlags)))
 				metadata.create_all(engine)
@@ -93,7 +93,7 @@ class Database:
 
 			with open("modified_file.csv") as no_header_data:
 				try:
-					cursor.copy_from(no_header_data, table=Database.tableName, sep=',')
+					cursor.copy_from(no_header_data, table=Database.table_name, sep=',')
 					cursor.execute 
 				except psycopg2.IntegrityError: 
 					Database.connection.rollback() 
@@ -113,8 +113,8 @@ class Database:
 	def getAllData(self): 
 		try:
 			cursor = Database.connection.cursor()
-			if(Database.tableName != ""): 
-				table = "public."+ "\"" + Database.tableName + "\""
+			if(Database.table_name != ""): 
+				table = "public."+ "\"" + Database.table_name + "\""
 				query = """SELECT * from """
 				try: 
 					cursor.execute(query+table)
@@ -134,8 +134,8 @@ class Database:
 	def getPartData(self, num_rows): 
 		try: 
 			cursor = Database.connection.cursor()
-			if(Database.tableName != ""): 
-				table = "public."+ "\"" + Database.tableName + "\""
+			if(Database.table_name != ""): 
+				table = "public."+ "\"" + Database.table_name + "\""
 				query = """SELECT * from """
 				try: 
 					cursor.execute(query+table)
