@@ -5,7 +5,9 @@ This project provides a pipeline from a Machine Learning model and Postgres data
 
 ### Instructions
 
-To run code - install pip and virtualenv. 
+To run code: 
+
+- install pip and virtual environment, activate virtual environment 
 
 - pip install -r requirements.txt 
 
