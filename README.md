@@ -5,7 +5,7 @@ This project provides a pipeline from a Machine Learning model and Postgres data
 
 ### Html vs User Version 
 
-The HTML version of the code has Flask interacting with an HTML page where the user can upload their files where necessary. 
+The HTML version of the code has Flask interacting with an HTML page where the user can upload their files. 
 
 The User version of the code allows the user to specify file paths directly into the url.
 
