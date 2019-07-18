@@ -5,15 +5,13 @@
 	<title>Table of Data</title>
 </head>
 	<body>
+		<h1>Database successfully created</h1>
 		<h1>Rows 1 - 15 of data</h1>
 		<table>
 			<tr> 
-				<th>Id</th>
-				<th>SepalWidth (cm)</th>
-				<th>SepalLength (cm)</th>
-				<th>PetalWidth (cm)</th>
-				<th>PetalLength (cm)</th>
-				<th>Species</th>
+				{% for name in columnNames %}
+					<th> {{name}} </th>
+				{% endfor %}
 			</tr>
 
 			{% for row in data %}
